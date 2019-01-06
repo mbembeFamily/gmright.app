@@ -1,0 +1,9 @@
+Android# Build your Android project with Gradle.# Add steps that test, sign, and distribute the APK, save build artifacts, and more:# https://docs.microsoft.com/azure/devops/pipelines/languages/android pool: vmImage: 'macOS 10.13' steps:- task: G''onlineonfreecloud' inputs: workingDirectory: ''''onlineonfreecloud' gradleWrapperFile: 'gradlew' gradleOptions: '-Xmx3072m' publishJUnitResults: false testResultsFiles: '**/TEST-*.xml' tasks: 'assembleDebug'gmriggtmarketwebs signupcerclcircle'paymentterms'signupcerclcircle'paymenttermscreditaid'webs' allterm' customerspage:'-gmrightterm':workspace$alinstInstagraml agreementfreeFreecloudcustomers
+
+Open.I*bot*>@gmright@<g>
+© 2019 Gmright, Inc.TermsPrivacySecurityStatusHelpContact gmrightPricingAPITrainingBlog
+
+>L.1.0
+>this_lice.8.
+All.clone.and.labe.should.clone.gmright.app<gmrightSDK.8.0.<open.1.20.0
+Should.run.the.same
