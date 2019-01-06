@@ -1,0 +1,45 @@
+Skip to content
+
+ Switch to mobile version
+
+This repository
+
+Pull requestsIssuesMarketplaceExplore
+
+Sign out
+
+Your account has been flagged.Because of that, your profile is hidden from the public. If you believe this is a mistake, contact support to have your account status reviewed.
+
+ Watch 527
+
+ Star6,009
+
+ Fork2,424facebook/facebook-objc-sdk
+
+ Code Pull requests 1 Projects 0 Insights
+
+Branch: master 
+
+Find fileCopy path
+
+facebook-objc-sdk/FBSDKTVOSKit.podspec
+
+797badb 17 days ago
+
+ codytwinton Changed Release Tag Prefix
+
+12 contributors
+
+RawBlameHistory
+
+  
+
+34 lines (25 sloc)  1.24 KB
+
+# Use the --use-libraries switch when pushing or linting this podspec Pod::Spec.new do |s| s.name = 'FBSDKTVOSKit' s.version = '4.39.0' s.summary = 'Official Facebook SDK for tvOS to access Facebook Platform with features like Login and Graph API.' s.description = <<-DESC The Facebook SDK for tvOS Kit framework provides Facebook Login with a confirmation code to easily sign in users on Apple TV without using the remote. See FBSDKCoreKit for additional functionality like Analytics and Graph API. DESC s.homepage = 'https://developers.facebook.com/docs/tvos' s.license = { :type => 'Facebook Platform License', :file => 'LICENSE' } s.author = 'Facebook' s.platform = :tvos s.tvos.deployment_target = '9.0' s.source = { :git => 'https://github.com/facebook/facebook-objc-sdk.git', :tag => 'v4.39.0' } s.source_files = 'FBSDKTVOSKit/FBSDKTVOSKit/**/*.{h,m}' s.public_header_files = 'FBSDKTVOSKit/FBSDKTVOSKit/*.h' s.header_dir = 'FBSDKTVOSKit' s.dependency 'FBSDKCoreKit' # We have a compile time depend on FBSDKShareKit s.dependency 'FBSDKShareKit' s.dependency 'FBSDKLoginKit'end
+
+© 2019 GitHub, Inc.TermsPrivacySecurityStatusHelpContact GitHubPricingAPITrainingBlogAbout
+
+Press h to open a hovercard with more details.
+
+
