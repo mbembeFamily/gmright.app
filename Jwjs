@@ -1,0 +1,68 @@
+site doesn't load fully - i.e. pictures are never fully loaded - just on this one system
+
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.7.8) Gecko/20050511 Firefox/1.0.4
+
+Build Identifier: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.7.8) Gecko/20050511 Firefox/1.0.4
+
+It seems to just happen on my main machine and just with Firefox.
+
+When I open up www.saturn.de -> after choosing the site of my market:
+
+Gummersbach (http://www.saturn.de/frontend/html/outlet/61/home.html) the site
+
+never is fully loaded (loaded completely).
+
+I use Firefox 1.0.4. Internet Explorer on the same client pc does NOT show this
+
+probem, instead the site www.saturn.de is very quickly.
+
+Firefox 1.0.4 on my laptop (other machine) also does NOT show this problem,
+
+pretty wierd.
+
+I deleted all www.saturn.de Cookies and cleared the Cache.
+
+After a restart of Firefox, the issues are the same nonwhatsoever.
+
+So I am looking more for a way to see why this is happening, maybe some logs, as
+
+I usually frequent this site very often.
+
+Both client PCs (see above) are connected through Wireless LAN (WLAN / WiFi) to
+
+the same access point in the same network.
+
+Reproducible: Always
+
+Steps to Reproduce:
+
+1. Just start Firefox and open up http://www.saturn.de
+
+2. If you do not have a Cookie, you first gotta choose your nearest market
+
+(Gummersbach in my case), before you get to the final site.
+
+Actual Results: 
+
+The site starts loading in Firefox, pictures start to become visible, then
+
+finally the site "freezes", i.e. nothing gets loaded anymore, although Firefox
+
+says in status bar "Übertrage Daten von www.saturn.de..." ("Transmitting data
+
+from www.saturn.de...").
+
+Firefox itself stays fully intact!! (i.e. it does not freeze or anything)
+
+You can even hit a link that already showed up, and then the game begins again
+
+(the linked www.saturn.de-Site shows the same phenomena)...
+
+Expected Results: 
+
+The site should of course be completely loaded (at least slowly).
+
+As I already said, IE doesn't have this problem.
+
+Also, a Firefox installation on a second PC does NOT show this problem.
+
