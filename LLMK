@@ -1,0 +1,7 @@
+I have a wallet with several tokens in it and a CDP. I want to run a CDP-keeper, but I don’t want to put my full seed on a server until I have some more security in place.
+
+It would be great if the account being watched could be separate from the account used in --eth-from. I believe it’s possible to fund a CDP without being its owner, right?
+
+Allowing this would also allow people with CDPs owned by accounts on hardware wallets to run the keeper.
+
+I could also run a keeper to watch my friend’s CDP. They aren’t savvy enough to run one and I would trust them to pay me back manually if the keeper has to do anything. I don’t need a fancy smart contract to handle that with a friend.
