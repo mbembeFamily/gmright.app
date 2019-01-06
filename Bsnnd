@@ -1,0 +1,105 @@
+Код получения токена платежа:
+
+override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_payment)
+        Checkout.attach(supportFragmentManager)
+
+        Checkout.setResultCallback(object : Checkout.ResultCallback {
+            override fun onResult(paymentToken: String, type: PaymentMethodType) {
+                Log.e("TOKEN", paymentToken)
+                Log.e("TYPE", type.name)
+            }
+        })
+
+       val paymentMethods = setOf(PaymentMethodType.BANK_CARD, PaymentMethodType.SBERBANK)
+
+        Checkout.tokenize(this, Amount(BigDecimal("10.0"), Currency.getInstance("RUB")),
+                ShopParameters(getString(R.string.app_name), getString(R.string.payment_subtitle),
+                        BuildConfig.YANDEX_APP_KEY, paymentMethods, false, null, null, true))
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Checkout.detach()
+    }
+
+
+
+Получаю ошибку:
+
+E/AndroidRuntime: FATAL EXCEPTION: main
+    Process: ru.elmed.prog_40.myregistratura, PID: 19880
+    java.lang.NoClassDefFoundError: Failed resolution of: Lcom/yandex/authsdk/YandexAuthSdk;
+        at ru.yandex.money.android.sdk.impl.j.l.onCreate(Unknown Source:9)
+        at android.support.v4.app.Fragment.performCreate(Fragment.java:2331)
+        at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1386)
+        at android.support.v4.app.FragmentTransition.addToFirstInLastOut(FragmentTransition.java:1188)
+        at android.support.v4.app.FragmentTransition.calculateFragments(FragmentTransition.java:1071)
+        at android.support.v4.app.FragmentTransition.startTransitions(FragmentTransition.java:115)
+        at android.support.v4.app.FragmentManagerImpl.executeOpsTogether(FragmentManager.java:2380)
+        at android.support.v4.app.FragmentManagerImpl.removeRedundantOperationsAndExecute(FragmentManager.java:2338)
+        at android.support.v4.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:2245)
+        at android.support.v4.app.FragmentManagerImpl.dispatchStateChange(FragmentManager.java:3248)
+        at android.support.v4.app.FragmentManagerImpl.dispatchActivityCreated(FragmentManager.java:3200)
+        at android.support.v4.app.Fragment.performActivityCreated(Fragment.java:2361)
+        at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1451)
+        at android.support.v4.app.FragmentManagerImpl.moveFragmentToExpectedState(FragmentManager.java:1759)
+        at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1827)
+        at android.support.v4.app.BackStackRecord.executeOps(BackStackRecord.java:797)
+        at android.support.v4.app.FragmentManagerImpl.executeOps(FragmentManager.java:2596)
+        at android.support.v4.app.FragmentManagerImpl.executeOpsTogether(FragmentManager.java:2383)
+        at android.support.v4.app.FragmentManagerImpl.removeRedundantOperationsAndExecute(FragmentManager.java:2338)
+        at android.support.v4.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:2245)
+        at android.support.v4.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:784)
+        at ru.yandex.money.android.sdk.Checkout.a(Unknown Source:20)
+        at ru.yandex.money.android.sdk.Checkout$a.invoke(Unknown Source:19)
+        at ru.yandex.money.android.sdk.k$k.invoke(Unknown Source:21)
+        at ru.yandex.money.android.sdk.impl.b.run(Unknown Source:2)
+        at android.os.Handler.handleCallback(Handler.java:790)
+        at android.os.Handler.dispatchMessage(Handler.java:99)
+        at android.os.Looper.loop(Looper.java:164)
+        at android.app.ActivityThread.main(ActivityThread.java:6494)
+        at java.lang.reflect.Method.invoke(Native Method)
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:440)
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:807)
+     Caused by: java.lang.ClassNotFoundException: Didn't find class "com.yandex.authsdk.YandexAuthSdk" on path: DexPathList[[zip file "/data/app/ru.elmed.prog_40.myregistratura-tPgKf6oIOcOY7-TaqQ9WNg==/base.apk"],nativeLibraryDirectories=[/data/app/ru.elmed.prog_40.myregistratura-tPgKf6oIOcOY7-TaqQ9WNg==/lib/arm64, /system/lib64, /vendor/lib64]]
+        at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:125)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
+        at ru.yandex.money.android.sdk.impl.j.l.onCreate(Unknown Source:9) 
+        at android.support.v4.app.Fragment.performCreate(Fragment.java:2331) 
+        at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1386) 
+        at android.support.v4.app.FragmentTransition.addToFirstInLastOut(FragmentTransition.java:1188) 
+        at android.support.v4.app.FragmentTransition.calculateFragments(FragmentTransition.java:1071) 
+        at android.support.v4.app.FragmentTransition.startTransitions(FragmentTransition.java:115) 
+        at android.support.v4.app.FragmentManagerImpl.executeOpsTogether(FragmentManager.java:2380) 
+        at android.support.v4.app.FragmentManagerImpl.removeRedundantOperationsAndExecute(FragmentManager.java:2338) 
+        at android.support.v4.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:2245) 
+        at android.support.v4.app.FragmentManagerImpl.dispatchStateChange(FragmentManager.java:3248) 
+        at android.support.v4.app.FragmentManagerImpl.dispatchActivityCreated(FragmentManager.java:3200) 
+        at android.support.v4.app.Fragment.performActivityCreated(Fragment.java:2361) 
+        at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1451) 
+        at android.support.v4.app.FragmentManagerImpl.moveFragmentToExpectedState(FragmentManager.java:1759) 
+        at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:1827) 
+        at android.support.v4.app.BackStackRecord.executeOps(BackStackRecord.java:797) 
+        at android.support.v4.app.FragmentManagerImpl.executeOps(FragmentManager.java:2596) 
+        at android.support.v4.app.FragmentManagerImpl.executeOpsTogether(FragmentManager.java:2383) 
+        at android.support.v4.app.FragmentManagerImpl.removeRedundantOperationsAndExecute(FragmentManager.java:2338) 
+        at android.support.v4.app.FragmentManagerImpl.execPendingActions(FragmentManager.java:2245) 
+        at android.support.v4.app.FragmentManagerImpl.executePendingTransactions(FragmentManager.java:784) 
+        at ru.yandex.money.android.sdk.Checkout.a(Unknown Source:20) 
+        at ru.yandex.money.android.sdk.Checkout$a.invoke(Unknown Source:19) 
+        at ru.yandex.money.android.sdk.k$k.invoke(Unknown Source:21) 
+        at ru.yandex.money.android.sdk.impl.b.run(Unknown Source:2) 
+        at android.os.Handler.handleCallback(Handler.java:790) 
+        at android.os.Handler.dispatchMessage(Handler.java:99) 
+        at android.os.Looper.loop(Looper.java:164) 
+        at android.app.ActivityThread.main(ActivityThread.java:6494) 
+        at java.lang.reflect.Method.invoke(Native Method) 
+        at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:440) 
+        at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:807)
+
+
+
+Из текста ошибки становится понятно, что не найден класс "com.yandex.authsdk.YandexAuthSdk", однако, в документации к SDK не сказано, что необходимо подключать YandexAuthSdk, если я не планирую использовать Яндекс.Деньги как способ оплаты. Пожалуйста, проясните ситуацию.
