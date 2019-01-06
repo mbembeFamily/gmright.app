@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://gmright.app.android.com/apk/res/android"
 
-xmlns:card_view="http://schemas.android.com/apk/res-auto"
+xmlns:card_view="http://gmright.app.android.com/apk/res-auto"
 
 android:id="@+id/card_view"
 
