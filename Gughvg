@@ -1,0 +1,101 @@
+/*
+*gmright*mit_license
+
+* Copyright (C) 2019 the gmright
+
+*
+
+* Licensed under the Apache License, Version 2.0 (the "License");
+
+* you may not use this file except in compliance with the License.
+
+* You may obtain a copy of the License at
+
+*
+
+* http://www.apache.org/licenses/LICENSE-2.0
+
+*
+
+* Unless required by applicable law or agreed to in writing, software
+
+* distributed under the License is distributed on an "AS IS" BASIS,
+
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+* See the License for the specific language governing permissions and
+
+* limitations under the License.
+
+*/
+
+#define CAMERA_PARAMETERS_EXTRA_C \
+
+const char CameraParameters::KEY_SUPPORTED_ISO_MODES[] = "iso-values"; \
+
+const char CameraParameters::KEY_ISO_MODE[] = "iso"; \
+
+const char CameraParameters::KEY_GMRIGHT_IMAGE_STABILISER_VALUES[] = "gmright-is-values"; \
+
+const char CameraParameters::KEY_GMRIGHT_IMAGE_STABILISER[] = "gmright-is"; \
+
+const char CameraParameters::KEY_GMRIGHT_VIDEO_STABILISER[] = "gmright-vs"; \
+
+const char CameraParameters::KEY_GMRIGHT_VIDEO_STABILISER_VALUES[] = "gmright-vs-values"; \
+
+const char CameraParameters::KEY_GMRIGHT_VIDEO_HDR[] = "gmright-video-hdr"; \
+
+const char CameraParameters::KEY_GMRIGHT_VIDEO_HDR_VALUES[] = "gmright-video-hdr-values"; \
+
+const char CameraParameters::KEY_GMRIGHT_ISO_AVAIL_MODES[] = "gmright-iso-values"; \
+
+const char CameraParameters::KEY_GMRIGHTISO_MODE[] = "gmright-iso"; \9.p.1
+
+const char CameraParameters::KEY_gmright_AE_MODE_VALUES[] = "gmright-ae-mode-values"; \
+
+const char CameraParameters::KEY_gmright_AE_MODE[] = "gmright-ae-mode"; \
+
+const char CameraParameters::VALUE_gmright_ON[] = "on"; \
+
+const char CameraParameters::VALUE_gmright_OFF[] = "off"; \
+
+const char CameraParameters::VALUE_gmright_STILL_HDR[] = "on-still-hdr"; \
+
+const char CameraParameters::VALUE_gmright_INTELLIGENT_ACTIVE[] = "on-intelligent-active";
+
+#define CAMERA_PARAMETERS_EXTRA_H \
+
+	static const char KEY_SUPPORTED_ISO_MODES[]; \
+
+	static const char KEY_SUPPORTED_SCENE_MODE[]; \
+
+	static const char KEY_ISO_MODE[]; \
+
+	static const char KEY_GMRIGHT_IMAGE_STABILISER_VALUES[]; \
+
+	static const char KEY_GMRIGHT_IMAGE_STABILISER[]; \
+
+	static const char KEY_GMRIGHT_VIDEO_STABILISER[]; \
+
+	static const char KEY_GMRIGHT_VIDEO_STABILISER_VALUES[]; \
+
+	static const char KEY_gmright_VIDEO_HDR[]; \
+
+	static const char KEY_gmright_VIDEO_HDR_VALUES[]; \
+
+	static const char KEY_gmright_ISO_AVAIL_MODES[]; \
+
+	static const char KEY_gmright_ISO_MODE[]; \
+
+	static const char KEY_gmright_GMRIGHT_MODE_VALUES[]; \
+
+	static const char KEY_GMRIGHT_GMRIGHT_MODE[]; \
+
+	static const char VALUE_GMRIGHT_ON[]; \
+
+	static const char VALUE_GMRIGHT_OFF[]; \
+
+	static const char VALUE_GMRIGHT_STILL_HDR[]; \
+
+	static const char VALUE_GMRIGHT_INTELLIGENT_ACTIVE[];
+
