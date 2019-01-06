@@ -1,0 +1,236 @@
+package com.example.yangbang.miowner.fragment;
+
+import android.content.Intent;
+
+import android.os.Message;
+
+import android.view.View;
+
+import android.widget.ImageView;
+
+import android.widget.LinearLayout;
+
+import android.widget.TextView;
+
+import com.example.yangbang.miowner.R;
+
+import com.example.yangbang.miowner.activity.AboutActivity;
+
+import com.example.yangbang.miowner.activity.MyOrderActivity;
+
+import com.example.yangbang.miowner.activity.OwnerProjectSchedulActivity;
+
+import com.example.yangbang.miowner.activity.OwnerSettingsActivity;
+
+import com.example.yangbang.miowner.activity.PayRecordActivity;
+
+import com.example.yangbang.miowner.activity.QuestionCommentActivity;
+
+import com.example.yangbang.miowner.activity.SiteMonitoringActivity;
+
+import com.example.yangbang.miowner.util.MyApplication;
+
+import com.hbw.library.BaseFragment;
+
+import com.hbw.library.utils.CircleBitmapDisplayer;
+
+import com.hbw.library.utils.Tools;
+
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+
+/**
+
+* 我的Fragment
+
+*
+
+* @FileName: com.example.yangbang.miowner.fragment.FragmentConstrucProgress.java
+
+* @author: Yangbang
+
+* @date: 2015-12-17 14:14
+
+*/
+
+public class FragmentMe extends BaseFragment implements View.OnClickListener {
+
+private LinearLayout llMeUserInfo;
+
+private ImageView imgvMeAvatar;
+
+private TextView tvMeTel;
+
+private LinearLayout ll_site_supervision;
+
+private LinearLayout llMeMyPayRecord;
+
+private LinearLayout llMeAboutWe;
+
+private LinearLayout ll_problem_and_evaluate;
+
+private LinearLayout ll_my_orders;
+
+private LinearLayout ll_schedules;
+
+private LinearLayout ll_site_supervision_line;
+
+@Override
+
+protected void initWidget() {
+
+assignViews();
+
+}
+
+private void assignViews() {
+
+ll_schedules = (LinearLayout) getView().findViewById(R.id.ll_schedules);
+
+ll_site_supervision_line = (LinearLayout) getView().findViewById(R.id.ll_site_supervision_line);
+
+llMeUserInfo = (LinearLayout) getView().findViewById(R.id.ll_me_user_info);
+
+imgvMeAvatar = (ImageView) getView().findViewById(R.id.imgv_me_avatar);
+
+tvMeTel = (TextView) getView().findViewById(R.id.tv_me_tel);
+
+ll_site_supervision = (LinearLayout) getView().findViewById(R.id.ll_site_supervision);
+
+llMeMyPayRecord = (LinearLayout) getView().findViewById(R.id.ll_me_my_pay_record);
+
+llMeAboutWe = (LinearLayout) getView().findViewById(R.id.ll_me_about_we);
+
+ll_problem_and_evaluate = (LinearLayout) getView().findViewById(R.id.ll_problem_and_evaluate);
+
+ll_my_orders = (LinearLayout) getView().findViewById(R.id.ll_my_orders);
+
+imgvMeAvatar.setImageBitmap(Tools.getRoundedCornerBitmap(Tools.getBitmapByRes(getActivity(), R.mipmap.ic_default_avatar)));
+
+llMeUserInfo.setOnClickListener(this);
+
+ll_schedules.setOnClickListener(this);
+
+//只有别墅才有 现场监管 摄像头
+
+if(MyApplication.getApp().getOwnerUser().getRoomtype() == 1){
+
+ll_site_supervision.setOnClickListener(this);
+
+}else{
+
+ll_site_supervision.setVisibility(View.GONE);
+
+ll_site_supervision_line.setVisibility(View.GONE);
+
+}
+
+llMeMyPayRecord.setOnClickListener(this);
+
+llMeAboutWe.setOnClickListener(this);
+
+ll_problem_and_evaluate.setOnClickListener(this);
+
+ll_my_orders.setOnClickListener(this);
+
+String mobile = MyApplication.getApp().getOwnerUser().getBaoming_mobile().substring(0, 3)
+
++ "****"
+
++ MyApplication.getApp().getOwnerUser().getBaoming_mobile().substring(7);
+
+tvMeTel.setText(mobile);
+
+String imgHeadUrl = MyApplication.getApp().getOwnerUser().getHead_img();
+
+if (imgHeadUrl != null && !"".equals(imgHeadUrl)
+
+&& !"http://image.xiaomizhuang.com".equals(imgHeadUrl)) {
+
+DisplayImageOptions options = new DisplayImageOptions.Builder()
+
+.cacheInMemory(true)
+
+.cacheOnDisc(true)
+
+.displayer(new CircleBitmapDisplayer(2)).build();
+
+MyApplication.imageLoader.displayImage(imgHeadUrl, imgvMeAvatar, options);
+
+}
+
+}
+
+@Override
+
+protected int initPageLayoutID() {
+
+return R.layout.fragment_me;
+
+}
+
+@Override
+
+public void onClick(View v) {
+
+switch (v.getId()) {
+
+case R.id.ll_me_user_info://用户设置
+
+startActivity(new Intent(getActivity(), OwnerSettingsActivity.class));
+
+break;
+
+case R.id.ll_schedules://排期总览
+
+Intent intent = new Intent(getActivity(), OwnerProjectSchedulActivity.class);
+
+intent.putExtra("from","FragmentMe");
+
+startActivity(intent);
+
+break;
+
+case R.id.ll_site_supervision://现场监管
+
+startActivity(new Intent(getActivity(), SiteMonitoringActivity.class));
+
+break;
+
+case R.id.ll_problem_and_evaluate://问题与评价
+
+startActivity(new Intent(getActivity(), QuestionCommentActivity.class));
+
+break;
+
+case R.id.ll_me_my_pay_record://付款记录
+
+startActivity(new Intent(getActivity(), PayRecordActivity.class));
+
+break;
+
+case R.id.ll_my_orders://我的订单
+
+startActivity(new Intent(getActivity(), MyOrderActivity.class));
+
+break;
+
+case R.id.ll_me_about_we://关于我们
+
+startActivity(new Intent(getActivity(), AboutActivity.class));
+
+break;
+
+}
+
+}
+
+@Override
+
+public boolean handleMessage(Message msg) {
+
+return super.handleMessage(msg);
+
+}
+
+}
+
