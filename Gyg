@@ -1,0 +1,80 @@
+Thank you for this component - I'm contributing this to help as my HA shows various fields with no data. The car is built between 07-2013 and 10-2015 which used to be important for a BMW labs Widget to talk to IFTTT. (That is another story of course but it does imply that the car is not so dumb.)
+
+Using a BMW CD app I can remotely lock / unlock / flash / sound horn / locate the car in the airport car park so the question is what magic does the app use? I can say that those empty HA BMW component fields (that is fuel, range & miles travelled) DO show data in the BMW app when you're USB connected to the car.
+
+status_0.txt
+{
+"vehicleStatus": {
+"DCS_CCH_Activation": "NA",
+"DCS_CCH_Ongoing": false,
+"position": {
+"lat": shows here ,
+"lon": shows here ,
+"status": "OK"
+},
+"steering": "RH",
+"updateTime": "2018-07-25T16:02:04+0200",
+"vehicleCountry": "GB",
+"vin": "some_vin"
+}
+}
+
+vehicles_0.txt
+{
+"vehicles": [
+{
+"a4a": "USB_ONLY",
+"bodytype": "F31",
+"brand": "BMW",
+"breakdownNumber": "+4989358957103",
+"carCloud": "NOT_SUPPORTED",
+"chargeNow": "NOT_SUPPORTED",
+"chargingControl": "NOT_SUPPORTED",
+"climateControl": "START_TIMER",
+"climateControlRES": "NOT_SUPPORTED",
+"climateFunction": "VENTILATION",
+"climateNow": "ACTIVATED",
+"climateNowRES": "NOT_SUPPORTED",
+"color": "PLATINSILBER METALLIC",
+"colorCode": "C08",
+"countryCode": "V1-UK",
+"dealer": {
+"city": "Farnborough",
+"country": "GB",
+"name": "BMW (UK) Ltd. ICS - DIRECT SUPPLY",
+"phone": "+44 1252 920000",
+"postalCode": "GU14 0FB",
+"street": "Summit ONE"
+},
+"doorLock": "ACTIVATED",
+"doorUnlock": "ACTIVATED",
+"driveTrain": "CONV",
+"fuelType": "DIESEL",
+"hasAlarmSystem": true,
+"hmiVersion": "ID4",
+"hornBlow": "NOT_SUPPORTED",
+"hub": "HUB_ECE",
+"intermodalRouting": "NOT_AVAILABLE",
+"ipa": "NOT_SUPPORTED",
+"lastDestinations": "NOT_SUPPORTED",
+"licensePlate": "some_license_plate",
+"lightFlash": "ACTIVATED",
+"lscType": "NOT_SUPPORTED",
+"model": "320d",
+"onlineSearchMode": "MAP",
+"onlineSearchProvider": "GOOGLE",
+"rangeMap": "NOT_SUPPORTED",
+"remote360": "NOT_SUPPORTED",
+"remoteSoftwareUpgrade": "NOT_SUPPORTED",
+"sendPoi": "ACTIVATED",
+"smartSolution": "NOT_SUPPORTED",
+"statisticsAvailable": false,
+"statisticsCommunityEnabled": false,
+"steering": "RH",
+"vehicleFinder": "ACTIVATED",
+"vehicleFinderRestriction": "NONE",
+"vin": "some_vin",
+"yearOfConstruction": 2015
+}
+]
+}
