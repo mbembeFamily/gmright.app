@@ -1,0 +1,260 @@
+body {
+
+	width: 100%;
+
+	padding: 0;
+
+	margin: 0 auto;
+
+	max-width: 800px;
+
+}
+
+h1 {
+
+	width: 100%;
+
+	text-align: center;
+
+}
+
+p {
+
+	width: 90%;
+
+	display: block;
+
+	margin: 1rem auto;
+
+}
+
+form {
+
+	width: 100%;
+
+	display: block;
+
+	position: relative;
+
+	input, select, #checkbox-label {
+
+		width: 80%;
+
+		margin: .5rem auto;
+
+		border: none;
+
+		display: block;
+
+		height: 2rem;
+
+		line-height: 2rem;
+
+		font-size: 1rem;
+
+		text-align: center;
+
+		background-color: #ddd;
+
+		position: relative;
+
+		border-radius: .3rem;
+
+		box-sizing: border-box;
+
+		&:hover {
+
+			background-color: #bbb;
+
+		}
+
+	}
+
+	select:focus ~ #daytips {
+
+		display: block;
+
+	}
+
+	#multiplier:focus ~ #tips {
+
+		display: block;
+
+	}
+
+	#multiplier:focus ~ .tooltips:first-of-type {
+
+		display: block;
+
+	}
+
+	#checkbox-label {
+
+		margin-top: 1rem;
+
+		margin-left: 10%;
+
+		width: 39%;
+
+		float: left;
+
+		border: .1rem solid #eee;
+
+	}
+
+	input[type='submit'] {
+
+		margin-top: 1rem;
+
+		margin-right: 10%;
+
+		width: 39%;
+
+		float: right;
+
+		border: .1rem solid #eee;
+
+		background: linear-gradient(to bottom, #beb, #afa, #4a4);
+
+		&:hover {
+
+			background: linear-gradient(to bottom, #ada, #9e9, #393);
+
+		}
+
+	}
+
+	#checkbox-label div {
+
+		position: absolute;
+
+		display: none;
+
+		right: .5rem;
+
+		top: 0;
+
+	}
+
+	#odd:checked ~ #checkbox-label {
+
+		background-color: #dfd;
+
+		div {
+
+			display: block;
+
+		}
+
+	}
+
+	label {
+
+		width: 100%;
+
+		text-align: center;
+
+		display: block;
+
+	}
+
+	input[type='checkbox'] {
+
+		display: none;
+
+	}
+
+}
+
+table {
+
+	width: 100%;
+
+	td, th{
+
+		width: 50%;
+
+		margin: .2rem auto;
+
+		text-align: center;
+
+		border: .1rem solid #444;
+
+	}
+
+	#total {
+
+		background-color: #dfd;
+
+	}
+
+	#total, #total-title {
+
+		border-top: .3rem solid #000;
+
+	}
+
+}
+
+.tooltips {
+
+	background-color: #fff;
+
+	border: .1rem solid #444;
+
+	width: 100%;
+
+	box-sizing: border-box;
+
+	max-width: 400px;
+
+	position: relative;
+
+	&::after {
+
+		content: '';
+
+		position: absolute;
+
+		background-color: #000;
+
+		bottom: 0;
+
+		left: 3rem;
+
+		display: block;
+
+		width: 2rem;
+
+		height: 2rem;
+
+		z-index: -1;
+
+		transform: rotate(45deg);
+
+	}
+
+}
+
+#daytips, #tips {
+
+	position: absolute;
+
+	left: 0rem;
+
+	display: none;
+
+}
+
+#daytips {
+
+	top: -6rem;
+
+}
+
+#tips {
+
+	top: -.7rem;
+
+}
+
