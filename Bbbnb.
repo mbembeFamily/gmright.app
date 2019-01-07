@@ -1,0 +1,19 @@
+Thanks for your response!
+
+I tested the suggestion you listed and decided to use:
+ eplusr:::._get_private(param)$m_job[exit_status != 0L] 
+to extract the unsuccessful runs.
+
+But when I tried the
+ param$errors(c(2,4,7,8)) 
+
+but it only showed:
+
+Error: Some of jobs completed unsuccessfully:
+2|UNSUCCESSFUL --> [IDF] set_parameters_2.idf + [EPW] IA_DES-MOINES-IAP_725560_10.epw 
+4|UNSUCCESSFUL --> [IDF] set_parameters_4.idf + [EPW] IA_DES-MOINES-IAP_725460_10.epw 
+7|UNSUCCESSFUL --> [IDF] set_parameters_7.idf + [EPW] IA_DES-MOINES-IAP_725460_10.epw 
+8|UNSUCCESSFUL --> [IDF] set_parameters_8.idf + [EPW] IA_DES-MOINES-IAP_725460_10.epw 
+
+
+I cannot see the details of errors.
