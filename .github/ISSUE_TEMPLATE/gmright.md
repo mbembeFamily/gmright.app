@@ -2,7 +2,7 @@
 name: GMRIGHT
 about: this is gmright technology we are bringing you new technology
 title: gmright platform
-labels: bug, duplicate, ENTERPRISE, ACCOUNTE, DATE RECIVE, create, COM.GMRIGHT.APP
+labels: ACCOUNTE, COM.GMRIGHT.APP, DATE RECIVE, ENTERPRISE, bug, create, duplicate
 assignees: ''
 
 ---
