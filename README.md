@@ -1,5 +1,6 @@
 ![Mark stale issues and pull requests](https://github.com/gmright2/gmright.app/workflows/Mark%20stale%20issues%20and%20pull%20requests/badge.svg?branch=master)
 
+![Greetings](https://github.com/gmright2/gmright.app/workflows/Greetings/badge.svg)
 
   $loginUrl = $gmright->getLoginUrl();
 }
